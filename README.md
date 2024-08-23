@@ -1,7 +1,9 @@
-<h1 align="center">Hi 👋, I'm Jiten Ashok Parmar</h1>
+<h1 align="center">Hi 👋, I'm Jiten Parmar</h1>
 <h3 align="center">Currently pursuing BTech in Computer Engineering at Shah & Anchor Kutchhi Engineering College.</h3>
 
 - 📫 How to reach me **parmar.jiten03@gmail.com**
+
+- 🚀 Check out my **Google Developer Profile**  [Jiten Parmar](https://www.cloudskillsboost.google/public_profiles/a219b939-7203-465e-867a-b788d98148eb)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
