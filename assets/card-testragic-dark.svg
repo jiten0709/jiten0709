@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" viewBox="0 0 480 240" role="img" aria-labelledby="t">
+  <title id="t">TestRAGic: Turns unstructured video transcripts into structured QA test cases, with a multi-provider LLM fallback chain.</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#C084FC"/></linearGradient>
+    <radialGradient id="gi"><stop offset="0" stop-color="#6366F1" stop-opacity="0.22"/><stop offset="1" stop-color="#6366F1" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gp"><stop offset="0" stop-color="#C084FC" stop-opacity="0.22"/><stop offset="1" stop-color="#C084FC" stop-opacity="0"/></radialGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#64748B" fill-opacity=".3"/></pattern>
+    <filter id="blur" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+    <clipPath id="c"><rect width="480" height="240" rx="18"/></clipPath>
+  </defs>
+  <style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace; }
+.drift { animation: drift 16s ease-in-out infinite alternate; }
+@keyframes drift { to { transform: translate(-60px, 30px); } }
+.pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2s ease-out infinite; }
+@keyframes pulse { from { transform: scale(1); opacity: .7; } to { transform: scale(2.6); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .drift, .pulse { animation: none; } }
+</style>
+  <g clip-path="url(#c)">
+    <rect width="480" height="240" fill="#151D2A"/>
+    <circle class="drift" cx="420" cy="0" r="240" fill="url(#gi)"/>
+  </g>
+  <rect x=".5" y=".5" width="479" height="239" rx="17.5" fill="none" stroke="#1E293B"/>
+
+  <text class="mono" x="28" y="46" font-size="16" letter-spacing="2" fill="#6366F1">AI · QA AUTOMATION</text>
+  <text class="sans" x="452" y="48" font-size="22" fill="#64748B" text-anchor="end">↗</text>
+  <text class="sans" x="28" y="88" font-size="34" font-weight="800" fill="url(#g)">TestRAGic</text>
+  <text class="sans" font-size="18" fill="#94A3B8"><tspan x="28" y="124">Turns unstructured video transcripts</tspan><tspan x="28" y="148">into structured QA test cases, with</tspan><tspan x="28" y="172">a multi-provider LLM fallback chain.</tspan></text>
+  <rect x="28" y="192" width="103" height="30" rx="15.0" fill="#C084FC" fill-opacity="0.15" stroke="#C084FC" stroke-opacity=".4"/><text class="mono" x="79.5" y="212.2" font-size="15" fill="#C084FC" text-anchor="middle">LangChain</text><rect x="141" y="192" width="67" height="30" rx="15.0" fill="#34D399" fill-opacity="0.15" stroke="#34D399" stroke-opacity=".4"/><text class="mono" x="174.5" y="212.2" font-size="15" fill="#34D399" text-anchor="middle">FAISS</text><rect x="218" y="192" width="48" height="30" rx="15.0" fill="#22D3EE" fill-opacity="0.15" stroke="#22D3EE" stroke-opacity=".4"/><text class="mono" x="242.0" y="212.2" font-size="15" fill="#22D3EE" text-anchor="middle">RAG</text>
+</svg>

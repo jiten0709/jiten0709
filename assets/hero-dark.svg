@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="340" viewBox="0 0 1000 340" role="img" aria-labelledby="t">
+  <title id="t">Jiten Parmar, AI Engineer and Published Researcher. Open to work.</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#C084FC"/></linearGradient>
+    <radialGradient id="gi"><stop offset="0" stop-color="#6366F1" stop-opacity="0.22"/><stop offset="1" stop-color="#6366F1" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gp"><stop offset="0" stop-color="#C084FC" stop-opacity="0.22"/><stop offset="1" stop-color="#C084FC" stop-opacity="0"/></radialGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#64748B" fill-opacity=".3"/></pattern>
+    <filter id="blur" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="12"/></filter>
+    <clipPath id="c"><rect width="1000" height="340" rx="18"/></clipPath>
+  </defs>
+  <style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace; }
+.drift { animation: drift 16s ease-in-out infinite alternate; }
+@keyframes drift { to { transform: translate(-60px, 30px); } }
+.pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2s ease-out infinite; }
+@keyframes pulse { from { transform: scale(1); opacity: .7; } to { transform: scale(2.6); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .drift, .pulse { animation: none; } }
+</style>
+  <g clip-path="url(#c)">
+    <rect width="1000" height="340" fill="#151D2A"/>
+    <rect width="1000" height="340" fill="url(#dots)"/><circle class="drift" cx="120" cy="340" r="280" fill="url(#gp)"/>
+    <circle class="drift" cx="940" cy="0" r="300" fill="url(#gi)"/>
+  </g>
+  <rect x=".5" y=".5" width="999" height="339" rx="17.5" fill="none" stroke="#1E293B"/>
+
+  <rect x="772" y="44" width="180" height="40" rx="20" fill="#34D399" fill-opacity="0.15" stroke="#34D399" stroke-opacity=".5"/>
+  <circle class="pulse" cx="796" cy="64" r="5" fill="#34D399"/>
+  <circle cx="796" cy="64" r="5" fill="#34D399"/>
+  <text class="sans" x="812" y="70" font-size="18" font-weight="600" fill="#34D399">Open to work</text>
+  <text class="mono" x="48" y="72" font-size="18" letter-spacing="4" fill="#6366F1">HI, I'M</text>
+  <text class="sans" x="44" y="140" font-size="64" font-weight="800" fill="url(#g)" opacity="0.35" filter="url(#blur)">Jiten Parmar</text><text class="sans" x="44" y="140" font-size="64" font-weight="800" fill="url(#g)">Jiten Parmar</text>
+  <text class="sans" x="48" y="180" font-size="24" fill="#94A3B8">AI Engineer · Published Researcher</text>
+  <rect x="40" y="212" width="292" height="96" rx="14" fill="#1E293B" stroke="#1E293B"/><text class="sans" x="64" y="256" font-size="38" font-weight="800" fill="#22D3EE">3</text><text class="sans" x="64" y="288" font-size="18" fill="#94A3B8">production ML pipelines</text><rect x="354" y="212" width="292" height="96" rx="14" fill="#1E293B" stroke="#1E293B"/><text class="sans" x="378" y="256" font-size="38" font-weight="800" fill="#22D3EE">4</text><text class="sans" x="378" y="288" font-size="18" fill="#94A3B8">GenAI apps · Vertex AI</text><rect x="668" y="212" width="292" height="96" rx="14" fill="#1E293B" stroke="#1E293B"/><text class="sans" x="692" y="256" font-size="38" font-weight="800" fill="#22D3EE">56% → 90%</text><text class="sans" x="692" y="288" font-size="18" fill="#94A3B8">validation accuracy</text>
+</svg>
