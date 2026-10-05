@@ -14,7 +14,7 @@
 
 <div align="center">
 
-[![View My Resume](https://img.shields.io/badge/View%20My%20Resume-Click%20Here-blue?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1q-HoALRRBPWYUIwiy-r6iDjjYb5SzAS7/view?usp=sharing)
+[![View My Resume](https://img.shields.io/badge/View%20My%20Resume-Click%20Here-blue?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1QvgB59MqGGU-ih5UoeyjK1gc9jULsFfZ/view?usp=share_link)
 
 </div>
 
@@ -26,10 +26,15 @@
 
 | **Category** | **Technologies & Frameworks** |
 | :--- | :--- |
-| **AI/ML & Research** | `TensorFlow`, `PyTorch`, `CNN`, `NLP`, `LLMs`, `Scikit-learn` |
-| **Generative AI** | `LangChain`, `LangGraph`, `RAG`, `AI Agents`, `AI APIs` |
-| **Vector Databases** | `ChromaDB`, `FAISS`, `Lancedb`, `Qdrant`, `Pinecone` |
-| **Backend & Cloud** | `Python`, `Flask`, `Django`, `Node.js`, `GCP`, `AWS`, `Docker`, `Kubernetes` |
-| **Tools & Apps** | `Streamlit`, `Chainlit`, `PostgreSQL`, `MongoDB`, `RESTful APIs`, `Git` |
+| **Languages** | `Python`, `JavaScript`, `TypeScript`, `SQL` |
+| **Generative AI & Agents** | `LangChain`, `LangGraph`, `LlamaIndex`, `MCP`, `RAG`, `AI Agents`, `Prompt Engineering` |
+| **LLM Engineering** | `Hugging Face`, `vLLM`, `Ollama`, `LoRA`, `PEFT`, `Fine-tuning`, `LLM APIs` |
+| **Evaluation & Observability** | `RAGAS`, `TruLens`, `LangSmith` |
+| **Machine Learning & CV** | `PyTorch`, `TensorFlow`, `Scikit-learn`, `CNN`, `NLP`, `OpenCV`, `YOLO` |
+| **Vector Search & Data** | `Qdrant`, `Pinecone`, `Weaviate`, `Milvus`, `FAISS`, `ChromaDB`, `LanceDB`, `PostgreSQL`, `MongoDB` |
+| **Backend & APIs** | `FastAPI`, `Flask`, `Django`, `Node.js`, `NestJS`, `RESTful APIs` |
+| **Frontend & AI Interfaces** | `React.js`, `Next.js`, `Vue.js`, `Streamlit`, `Chainlit` |
+| **Cloud & MLOps** | `GCP (Vertex AI, AutoML)`, `AWS`, `Azure`, `MLflow`, `Docker`, `Kubernetes`, `CI/CD`, `Git` |
+| **Workflow Automation** | `n8n`, `Make`, `Zapier` |
 
 ---
