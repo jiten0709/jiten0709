@@ -3,9 +3,13 @@
 Run: python3 assets/build.py  ->  assets/<name>-light.svg, assets/<name>-dark.svg
 README.md switches between them with <picture>, which follows GitHub's theme setting.
 """
-from functools import partial
+import re
+from base64 import b64encode
+from functools import cache, partial
 from pathlib import Path
-from xml.sax.saxutils import escape
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
+from xml.sax.saxutils import escape, unescape
 
 OUT = Path(__file__).parent
 
@@ -39,9 +43,18 @@ TECH = [
     ("Workflow Automation", "amber", ["n8n", "Make", "Zapier"]),
 ]
 
-CSS = """
-.sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
-.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace; }
+SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+# class -> (Google Fonts family, axes, extra CSS). GitHub shows SVGs via <img>, which blocks external
+# fonts, so each SVG embeds base64 subsets holding only the glyphs it uses (see font_css).
+FONTS = {
+    "display": ("Space Grotesk", "wght@700", f"font-family: 'Space Grotesk', {SANS}; font-weight: 700;"),
+    "serif": ("Instrument Serif", "ital@1", "font-family: 'Instrument Serif', Georgia, serif; font-style: italic;"),
+    "sans": ("Inter", "wght@400;600", f"font-family: Inter, {SANS};"),
+    "mono": ("JetBrains Mono", "wght@400", "font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;"),
+}
+UA = {"User-Agent": "Mozilla/5.0 (Macintosh) AppleWebKit/537.36 Chrome/120 Safari/537.36"}  # gets woff2, not ttf
+
+CSS = "".join(f"\n.{cls} {{ {rule} }}" for cls, (_, _, rule) in FONTS.items()) + """
 .drift { animation: drift 16s ease-in-out infinite alternate; }
 @keyframes drift { to { transform: translate(-60px, 30px); } }
 .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2s ease-out infinite; }
@@ -51,6 +64,25 @@ CSS = """
 
 # Monospace advance per em: SF Mono/Menlo ~0.60, Consolas 0.55. Rounded up so chip text never overflows.
 CH = 0.61
+
+
+@cache
+def fetch(url):
+    with urlopen(Request(url, headers=UA)) as r:
+        return r.read()
+
+
+def font_css(svg):
+    """@font-face rules with each family subset (Google Fonts `text=`) to the glyphs its class uses in this SVG."""
+    # ponytail: build needs network; cache files under assets/fonts/ if offline builds matter
+    out = []
+    for cls, (family, axes, _) in FONTS.items():
+        found = re.findall(rf'<text class="{cls}"[^>]*>(.*?)</text>', svg)
+        text = "".join(sorted(set(unescape(re.sub("<[^>]+>", "", "".join(found))))))
+        if text:
+            face = fetch("https://fonts.googleapis.com/css2?" + urlencode({"family": f"{family}:{axes}", "text": text})).decode()
+            out.append(re.sub(r"url\((.*?)\)", lambda m: f"url(data:font/woff2;base64,{b64encode(fetch(m[1])).decode()})", face))
+    return "".join(out)
 
 
 def chip(x, y, text, accent, t, size=15):
@@ -96,14 +128,15 @@ def frame(w, h, title, t, body, extra_bg=""):
 
 
 def hero(t):
-    stats = [("3", "production ML pipelines"), ("4", "GenAI apps · Vertex AI"), ("56% → 90%", "validation accuracy")]
+    skills = [("GenAI", "systems", "indigo"), ("Agentic AI", "workflows", "purple"), ("RAG", "pipelines", "teal")]
     tiles = "".join(
         f'<rect x="{x}" y="212" width="292" height="96" rx="14" fill="{t["elevated"]}" stroke="{t["border"]}"/>'
-        f'<text class="sans" x="{x + 24}" y="256" font-size="38" font-weight="800" fill="{t["teal"]}">{n}</text>'
-        f'<text class="sans" x="{x + 24}" y="288" font-size="18" fill="{t["text2"]}">{label}</text>'
-        for x, (n, label) in zip((40, 354, 668), stats)
+        f'<rect x="{x + 25}" y="229" width="9" height="9" rx="1.5" fill="{t[c]}" transform="rotate(45 {x + 29.5} 233.5)"/>'
+        f'<text class="display" x="{x + 22}" y="272" font-size="32" fill="{t[c]}">{name}</text>'
+        f'<text class="sans" x="{x + 24}" y="296" font-size="17" fill="{t["text2"]}">{label}</text>'
+        for x, (name, label, c) in zip((40, 354, 668), skills)
     )
-    name = '<text class="sans" x="44" y="140" font-size="64" font-weight="800" fill="url(#g)"{}>Jiten Parmar</text>'
+    name = '<text class="display" x="44" y="140" font-size="64" fill="url(#g)"{}>Jiten Parmar</text>'
     glow = name.format(f' opacity="{t["name_glow"]}" filter="url(#blur)"') if t["name_glow"] else ""
     e = t["emerald"]
     body = f"""
@@ -113,7 +146,7 @@ def hero(t):
   <text class="sans" x="812" y="70" font-size="18" font-weight="600" fill="{e if t['accent_text'] else t['text']}">Open to work</text>
   <text class="mono" x="48" y="72" font-size="18" letter-spacing="4" fill="{t['indigo']}">HI, I'M</text>
   {glow}{name.format('')}
-  <text class="sans" x="48" y="180" font-size="24" fill="{t['text2']}">AI Engineer · Published Researcher</text>
+  <text class="serif" x="48" y="182" font-size="30" fill="{t['text2']}">AI Engineer · Published Researcher</text>
   {tiles}"""
     bg = '\n    <rect width="1000" height="340" fill="url(#dots)"/><circle class="drift" cx="120" cy="340" r="280" fill="url(#gp)"/>'
     return frame(1000, 340, "Jiten Parmar, AI Engineer and Published Researcher. Open to work.", t, body, bg)
@@ -128,7 +161,7 @@ def project(t, kicker, name, lines, chips, tag=None):
     body = f"""
   <text class="mono" x="28" y="46" font-size="16" letter-spacing="2" fill="{t['indigo']}">{escape(kicker)}</text>
   {tag_svg}<text class="sans" x="452" y="48" font-size="22" fill="{t['muted']}" text-anchor="end">↗</text>
-  <text class="sans" x="28" y="88" font-size="34" font-weight="800" fill="url(#g)">{escape(name)}</text>
+  <text class="display" x="28" y="88" font-size="34" fill="url(#g)">{escape(name)}</text>
   <text class="sans" font-size="18" fill="{t['text2']}">{pitch}</text>
   {chip_row(28, 192, chips, t)}"""
     title = f"{name}{' (work in progress)' if tag else ''}: {' '.join(lines)}"
@@ -141,7 +174,7 @@ def paper(t):
     body = f"""
   <text class="mono" x="40" y="44" font-size="16" letter-spacing="2" fill="{t['indigo']}">TAYLOR &amp; FRANCIS (CRC PRESS) · 2026</text>
   <text class="sans" x="960" y="46" font-size="20" fill="{t['muted']}" text-anchor="end">DOI ↗</text>
-  <text class="sans" x="40" y="86" font-size="26" font-weight="800" fill="url(#g)">{title}</text>
+  <text class="display" x="40" y="86" font-size="26" fill="url(#g)">{title}</text>
   <text class="sans" x="40" y="118" font-size="19" fill="{t['text2']}">Artificial Intelligence and Sustainable Innovation</text>
   {chip_row(40, 140, chips, t)}"""
     return frame(1000, 190, f"Published research: {title}. Taylor and Francis (CRC Press), 2026.", t, body)
@@ -192,7 +225,7 @@ def heading(t, kicker, title, W=1000):
   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{t['indigo']}"/><stop offset="1" stop-color="{t['purple']}"/></linearGradient></defs>
   <style>{CSS}</style>
   <text class="mono" x="{W / 2}" y="28" font-size="15" letter-spacing="4" fill="{t['indigo']}" text-anchor="middle">{escape(kicker)}</text>
-  <text class="sans" x="{W / 2}" y="70" font-size="32" font-weight="800" fill="{t['text']}" text-anchor="middle">{escape(title)}</text>
+  <text class="display" x="{W / 2}" y="70" font-size="32" fill="{t['text']}" text-anchor="middle">{escape(title)}</text>
   <rect x="{W / 2 - 32}" y="86" width="64" height="4" rx="2" fill="url(#g)"/>
 </svg>
 """
@@ -223,5 +256,6 @@ CARDS = {
 if __name__ == "__main__":
     for mode, t in TOKENS.items():
         for name, make in CARDS.items():
-            (OUT / f"{name}-{mode}.svg").write_text(make(t), encoding="utf-8")
+            svg = make(t)
+            (OUT / f"{name}-{mode}.svg").write_text(svg.replace("<style>", "<style>" + font_css(svg), 1), encoding="utf-8")
     print(f"wrote {len(CARDS) * len(TOKENS)} SVGs to {OUT}")

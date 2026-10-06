@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg" />
-    <img src="assets/hero-light.svg" width="100%" alt="Jiten Parmar, AI Engineer and Published Researcher. Open to work. 3 production ML pipelines, 4 GenAI apps on Vertex AI, validation accuracy raised from 56% to 90%." />
-  </picture>
+    <img src="assets/hero-light.svg" width="100%" alt="Jiten Parmar, AI Engineer and Published Researcher. Open to work. Top skills: GenAI systems, Agentic AI workflows, RAG pipelines." />
+</picture>
 </p>
 
 <p align="center">

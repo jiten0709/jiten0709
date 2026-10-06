@@ -1,9 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="100" viewBox="0 0 1000 100" role="img" aria-labelledby="t">
   <title id="t">Technical Ecosystem</title>
   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#9333EA"/></linearGradient></defs>
-  <style>
-.sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
-.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace; }
+  <style>@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  src: url(data:font/woff2;base64,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) format('woff2');
+  unicode-range: U+20, U+45, U+54, U+61, U+63, U+65, U+68-69, U+6c-6f, U+73-74, U+79;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url(data:font/woff2;base64,d09GMgABAAAAAASYAA8AAAAACLAAAARAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbHhwoBmA/U1RBVF4AbBEICoVUhFcLGAABNgIkAxgEIAWFAAcgGxYHyAQe+PeyPzdJNamRFatBocnUnEJY6WvbJ/tLGiz0+exMfz91KTDfOx/olH6ukqrLaBhNmTjhgXsPY5cXGY4AAuEVEoLyfRwHmEiEyaK4tLoZf5RSuWE0wVTuZsyXYGj4VP/SDMGsoMlkRXKKq/ABaVVqh4IqL0j0kCGKxpITgCdzF5IRyp/fAP5AT6UOvOctNF6U//3fBfK/YqeGuPOiF6TN0hko1JbI8++DRiQyYaNxz+jY0tyWjC/1T4kQBL7Es73aJQlFXDWxAvEOqpOzcum1JFGIQzeHzg5twI8sRjyZwhaODScUGQmNNDKx46CKZl7ccEGW1LTW+NrwGC7jLeNN4yXjaaNx2CJ6qEAYBiGIrHKjOeQwPV+A2Hok2BVRZYQJ5U7PhCLL/gFa0A7/8OBALVD1CVIGgnyGJgPVXrXb1Gpq7lRb7/FEX+fS+lc9HiEf83rVNbcb0zGPadWFdNStrnmFetTlUn1USe1U2ztMTpPUv+rxrFePutU1rzjmsbZ6POIYELaQ0KNuS4vbDenAJIIwKUPnSkddrtY1r5CnmNm2+oY49qa69jpHX2uG9w3T6SaTaAsUQTS7Gz5juPp+/M84z9x3pjt9Z26hsSNnJxmvn9732unO1LfPp75tD3rJdskIa0lMDGv5n9QAvS/d3GOv1M3dfem63puR2W13FhTpubm6vaCqQNdzc4v0AmdRZk9vBl1nnNlTd2cNPNfzxv7RhxvGG0kNKB9JtXUEOW2VhY7C0nzbzt321waSK6PrJytyza29afa+xQnandaivNycIlvGrlT7R4Mp5dF105V5to6hdIyT7zZ+3fjuSXYEOAbMlj57kW7pHTA7ivvNll69yG7pGzDr1Xnl1flF+eXVeXnl1f6Lyf0+QSQmkJBAQqJAC9AHzJbuQmd+cXF+gaMsx1zgcBRUOZ97cmvjCeeLT3dKyw/1mQut3YNmdgRs/mDTlo82b/5oy6YPkPzwBxFMEXBaKOKIeAQBSFbl9Zbnc3pD8n7zl+UvAc5+/sAtAGfPfPrzX9n/u5Rr5H8BX6QXgL29rpWn/sr+70rlmnt7rpDacZJBO12UY6OeUk5z+vV0p4qXmOE5fLsgtxe5ydwbmEwo71/zmtgdAUGiCAcSwUIBMnm8CxR2chvwIZ7jwJfttNODsbKeJ6YRRsM6ZbgIEUIgJsgNZfOgkVmm6WeGCpYY4xTjDNLGsGuUMZasxCXmWCSHVDZvkUEWGGeOJRbZDRXjTOFHzLLAKKnUUUo1lQyzhM4C/YwzwyI1zAII7rOLRoYZZZkp+lmglWEOGQCpcmhksBtz01mJ7mKNY6bldeDmcnzdqcrkRRJlTxjqYJY59m0dOxhkqfw0azAazYwxjLbkWfUsMMsEwwx2VdlZPmDk6JBGzbcetmqU8crQZQbYzeBltUqdoN3U7fK3/emwYDOGyfjr83UA) format('woff2');
+  unicode-range: U+20, U+30, U+33, U+41, U+43, U+4b, U+53-54, U+b7;
+}
+
+.display { font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 700; }
+.serif { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; }
+.sans { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .drift { animation: drift 16s ease-in-out infinite alternate; }
 @keyframes drift { to { transform: translate(-60px, 30px); } }
 .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2s ease-out infinite; }
@@ -11,6 +27,6 @@
 @media (prefers-reduced-motion: reduce) { .drift, .pulse { animation: none; } }
 </style>
   <text class="mono" x="500.0" y="28" font-size="15" letter-spacing="4" fill="#4F46E5" text-anchor="middle">03 · STACK</text>
-  <text class="sans" x="500.0" y="70" font-size="32" font-weight="800" fill="#0F172A" text-anchor="middle">Technical Ecosystem</text>
+  <text class="display" x="500.0" y="70" font-size="32" fill="#0F172A" text-anchor="middle">Technical Ecosystem</text>
   <rect x="468.0" y="86" width="64" height="4" rx="2" fill="url(#g)"/>
 </svg>

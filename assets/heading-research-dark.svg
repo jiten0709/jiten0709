@@ -1,9 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="100" viewBox="0 0 1000 100" role="img" aria-labelledby="t">
   <title id="t">Published Research</title>
   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#C084FC"/></linearGradient></defs>
-  <style>
-.sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
-.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace; }
+  <style>@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  src: url(data:font/woff2;base64,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) format('woff2');
+  unicode-range: U+20, U+50, U+52, U+61-65, U+68-69, U+6c, U+72-73, U+75;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url(data:font/woff2;base64,d09GMgABAAAAAATQAA8AAAAACQgAAAR5AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbHhwoBmA/U1RBVF4AdBEICoYchQ0LGgABNgIkAxoEIAWFAAcgG1YHyAQe+Lyq95O0kmq6GkTSqqaqiZFPU72CTtL4tEJh4NPamf7eaQUa5b3zQFP6Y7/mXAbx2NRFY2KiiWDD2KVl5iIAC6xZQlDQ2wqDShysFM2tXUP4ouRqTbMKIbPpGEowO2Tz3O6tBNBtVfYrkl3chhdIN0hjUNbpZIhpikVjX1r88H4eQzKD+PMbwBe46DCAnxzDyhvyv/87Qf5X5FoRj17wgJQunYZWK15T5HzbEBGGzEv17FtZ3T22rLXdc5tF4EKsMWQXRyWhiNsGNiNOoBE5qZUORflCGbQ4fHR4BRiWjTlChdlbg5BRsFJIMTpNtGBjkDeW3CFDMPCA+Y3pMd3mMfOoecQ8ZL5iDnbeUc0WCNMkEBEHwkZBbDrsV5S8eWuITLl8VFA4crnZT6LIsq+f1WIJ9MsJCbDEWjQvf2Xe32txk0Wb0abUEXVoQht5wh1xl9M6d4PbLeQNj0e70eVC3XCrNziRHC7tRo/QHE6n5uWPBX8skj+alyZpsqaosippXtqNLhcO59C4alcluapnw62qXemStaa5G+7yEbdbtCwfJhGHq2zYVWuCs99myeF0jtzoEXL/Z0dvOCI2jmo3HsZxSBOjX7Qev8GJ6ik/3+EcGvJnrsxfyn76qdNTRbk1DWZOdS7Fh08dOHRqouD4uYLjuv+bFRfN4OG4uODh/ynwM2aLSqf1DqN0arbIMGaKS6Z0e32jUVNj6PWd9YZRU9No1NsbS6Znilk8/dRA5+XM/ky5c4Cp0/bKryvtp+19X/cxefqyPldaNtXQ0bWmh97XsH5j2Z7ya6+rbGqtrmlqqbyOAj/bckHFuL+9oqOhqaG1riI3Xz80n9AR0bepvaZ0ZKZQn921zpi9vLG2prqxojivQP9oIdEW0bulo7ZifLGIHL+m+dKyWb3RKJuZL21qnistmzEa9bLZ+VKjq9bWVddYZ+uqrbV11TXW2bpqvo8VcbHExhIbJ5icPP/tTSXTuXVGS3Wjra3BLvTK2cWSJmO2uGRKr9cPdHS/8lb3ADl+6R+kZXyUnv5RRtoHSD74gQjACpwSijgoXkAAUrkSHmj+PRNY+5uvLH8JcObzZx4AOHP605//qvrfqdwh/wt4IwEgQP735i6svPhX1X+3Knec98eFNIadYsZYZIpJbPRh4xSnbl+2RbzJVl59jdpUKHdusXDPieeU98N+SOQHQBAnQoBEgFCATC3vAoVcHgJexHAF8CabMXEA5SRzYhh5BBxRussTgVhQIRtEn4IBtrGFObbSzm5acjNrLDDKUnSFVXYb5bvZzi6qKaBP7WKBnayxnd3sIh+a19iMv7GNnaxQQC+tdNHBErsx2Mkca2xlF91sAwi8JI8BllhhD5uZYycjLDFYB1hR2Eox+Zgtors0V1oZadaWBmwNAw1rIIN3iPQ8YHYT29jOgaUTG4NNFRYa67EyxCpLWKd8rI+dbGOdJRaaWnX2bDC2dVilyZmbbV1hrTB7D/Pks3BY0woGmLVguTDrT0C5oLlE8V/RqgI=) format('woff2');
+  unicode-range: U+20, U+30, U+32, U+41, U+43, U+45, U+48, U+52-53, U+b7;
+}
+
+.display { font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 700; }
+.serif { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; }
+.sans { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .drift { animation: drift 16s ease-in-out infinite alternate; }
 @keyframes drift { to { transform: translate(-60px, 30px); } }
 .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2s ease-out infinite; }
@@ -11,6 +27,6 @@
 @media (prefers-reduced-motion: reduce) { .drift, .pulse { animation: none; } }
 </style>
   <text class="mono" x="500.0" y="28" font-size="15" letter-spacing="4" fill="#6366F1" text-anchor="middle">02 · RESEARCH</text>
-  <text class="sans" x="500.0" y="70" font-size="32" font-weight="800" fill="#F8FAFC" text-anchor="middle">Published Research</text>
+  <text class="display" x="500.0" y="70" font-size="32" fill="#F8FAFC" text-anchor="middle">Published Research</text>
   <rect x="468.0" y="86" width="64" height="4" rx="2" fill="url(#g)"/>
 </svg>

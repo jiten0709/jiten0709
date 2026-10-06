@@ -1,9 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="100" viewBox="0 0 1000 100" role="img" aria-labelledby="t">
   <title id="t">GitHub Activity</title>
   <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#C084FC"/></linearGradient></defs>
-  <style>
-.sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
-.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace; }
+  <style>@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  src: url(data:font/woff2;base64,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) format('woff2');
+  unicode-range: U+20, U+41, U+47-48, U+62-63, U+69, U+74-76, U+79;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url(data:font/woff2;base64,d09GMgABAAAAAARsAA8AAAAACIQAAAQTAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbHhwoBmA/U1RBVF4AfBEICoUQg3sLGgABNgIkAxoEIAWFAAcgG8wGyAQCetf82STY5dCaBfP2MA+t43ZQMRWk4l99rrnn3mkBhnn3PNCU/thXm/awsYZAwmNT0VoUcE655gB2t+xUBGCGt0oIBm2dKJhojULRsXNaHvYopRbDaMKoog+FEpLdBlpHDsaJrWuyXpFKxFJsQJovFUHbw0sQFVhE8lgWHKj1bEUyXPjzG8Ce8NBdB89cReOM/O//tSD/K4I0xJYPDSD5SK9h17BZomTfh5LGyDIv35g+fUfOLanfSOtA4bwRe0sCquOSUMTSia2I62SPnLVIF5NyYXDZHD07ugE2LqY8hULfd5rigowtGu0JJ4VUupFHAcWc2XTzoquMb4wGo9a4alwxzhtHjSPGISN3iiZ6skAYBs4kczFic1BJ8Qir++6ImEKdfGWMoZO7/TYUWbZ30Mz2js5uTmazWbVxVKodbXoOMKuVarmpwJRXqhZsr2+6slazzq+vF/K0hgZ1QV0dpmn1pvm1SFPr1AUNQp1aW6sK1cYkHDEpKqqNSThiUtQKtXhbXYsNDZ6lapkql6jF6zY1WbOlValaJFnnD1UtTa2tLVjQIOQhDymcf1lMu6IuuMTUi47CLPqoPYlxoUrWou8ueb3zdXmHoLgkIzA2CMulV+MuvioNvfYu9FqK49moj4ZrfuvWrvn/E+qgV3UIr0jproeXV3XQ9UpLWHlKSWKyHhenpyT2SNT1uLhkPbEkOayi0kK/nFWRq3JmO/8FY97dnK9z7s7j+wuvyif8cMO1KDLSpejG+B9KL77CcH1zt3xp4NnnzZp9PrsosPzNXVcCHVKrwyOqUpL1iMrq8NSO1vCISj05JaKqOlxPi++alpCc0DUtPr5rWkJyQte0uO9bidataNWKVq0F67d2X6QdrPa74vfj8ZKdBDr4PPD2feTj88jX+wGS3SvwCic0IfmVUMQUsf9e7JMilcUbH9pXOsf/Zi/LXwj/m+e713vrXj/9+a+Y/2uV5fK/QNubSt9a5r1MrBz9K+a/Jcry+3W9kIoowUIR/YjCgidZZPGKV3c+2SzOMpiTf0CdjvLgNjOr75ekvFrnRRESgaC1cAMJJ6GATDx3QSGIjWBDS6aDLQEUqZyIxEMS0+iaokcZLk04Y8YE0YXdBTkMYRBWBtONkaz6QPpRQyG94n3oy0grfyRDGUEsoeyuEdQwnH4MZSQjCIG1HwOpTwxhOH0IJZPOpNGdXoxEZzhW+jGYEaQzhCBwTDA59KIPoxiIleEU0IujBqCqohoWQiixA9uku0HjNGk1HcQ4DnWnI5M3SLQ8YXIqQxjKuK0zB0MtFdtb89HIoy+90Ja8LYvhDKE/vajpak9h1AFTR0c1Gux32PY+9KtMHkU1IdRc1rDQCUYN3S76/8SkEDZ6Yfmha3UAAA==) format('woff2');
+  unicode-range: U+20, U+30, U+34, U+41, U+43, U+49, U+54, U+56, U+59, U+b7;
+}
+
+.display { font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 700; }
+.serif { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; }
+.sans { font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .drift { animation: drift 16s ease-in-out infinite alternate; }
 @keyframes drift { to { transform: translate(-60px, 30px); } }
 .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2s ease-out infinite; }
@@ -11,6 +27,6 @@
 @media (prefers-reduced-motion: reduce) { .drift, .pulse { animation: none; } }
 </style>
   <text class="mono" x="500.0" y="28" font-size="15" letter-spacing="4" fill="#6366F1" text-anchor="middle">04 · ACTIVITY</text>
-  <text class="sans" x="500.0" y="70" font-size="32" font-weight="800" fill="#F8FAFC" text-anchor="middle">GitHub Activity</text>
+  <text class="display" x="500.0" y="70" font-size="32" fill="#F8FAFC" text-anchor="middle">GitHub Activity</text>
   <rect x="468.0" y="86" width="64" height="4" rx="2" fill="url(#g)"/>
 </svg>
