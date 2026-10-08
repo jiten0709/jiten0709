@@ -131,9 +131,8 @@ def hero(t):
     skills = [("GenAI", "systems", "indigo"), ("Agentic AI", "workflows", "purple"), ("RAG", "pipelines", "teal")]
     tiles = "".join(
         f'<rect x="{x}" y="212" width="292" height="96" rx="14" fill="{t["elevated"]}" stroke="{t["border"]}"/>'
-        f'<rect x="{x + 25}" y="229" width="9" height="9" rx="1.5" fill="{t[c]}" transform="rotate(45 {x + 29.5} 233.5)"/>'
-        f'<text class="display" x="{x + 22}" y="272" font-size="32" fill="{t[c]}">{name}</text>'
-        f'<text class="sans" x="{x + 24}" y="296" font-size="17" fill="{t["text2"]}">{label}</text>'
+        f'<text class="display" x="{x + 22}" y="262" font-size="32" fill="{t[c]}">{name}</text>'
+        f'<text class="sans" x="{x + 24}" y="286" font-size="17" fill="{t["text2"]}">{label}</text>'
         for x, (name, label, c) in zip((40, 354, 668), skills)
     )
     name = '<text class="display" x="44" y="140" font-size="64" fill="url(#g)"{}>Jiten Parmar</text>'
@@ -232,7 +231,7 @@ def heading(t, kicker, title, W=1000):
 
 
 HEADINGS = {
-    "projects": ("01 · PROJECTS", "Currently Building"),
+    "projects": ("01 · PROJECTS", "Signature Builds"),
     "research": ("02 · RESEARCH", "Published Research"),
     "stack": ("03 · STACK", "Technical Ecosystem"),
     "activity": ("04 · ACTIVITY", "GitHub Activity"),

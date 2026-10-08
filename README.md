@@ -17,17 +17,17 @@
 
 <h3 align="center"><picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/heading-projects-dark.svg" />
-  <img src="assets/heading-projects-light.svg" width="100%" alt="Currently Building" />
+  <img src="assets/heading-projects-light.svg" width="100%" alt="Signature Builds" />
 </picture></h3>
 
 <p align="center">
-  <a href="https://github.com/jiten0709/TestRAGic"><picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/card-testragic-dark.svg" />
-    <img src="assets/card-testragic-light.svg" width="49%" alt="TestRAGic: turns unstructured video transcripts into structured QA test cases, with a multi-provider LLM fallback chain. LangChain, FAISS, RAG." />
-  </picture></a>
   <a href="https://github.com/jiten0709/SurakshaSetu"><picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/card-surakshasetu-dark.svg" />
     <img src="assets/card-surakshasetu-light.svg" width="49%" alt="SurakshaSetu (work in progress): a life-insurance advisor where the LLM handles the conversation and every decision comes from auditable rules. FastAPI, LangGraph, Spring Boot." />
+  </picture></a>
+  <a href="https://github.com/jiten0709/TestRAGic"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/card-testragic-dark.svg" />
+    <img src="assets/card-testragic-light.svg" width="49%" alt="TestRAGic: turns unstructured video transcripts into structured QA test cases, with a multi-provider LLM fallback chain. LangChain, FAISS, RAG." />
   </picture></a>
 </p>
 
@@ -41,6 +41,11 @@
     <source media="(prefers-color-scheme: dark)" srcset="assets/card-paper-dark.svg" />
     <img src="assets/card-paper-light.svg" width="100%" alt="Smart Diagnosis: Using CNN to Identify Skin Conditions. Artificial Intelligence and Sustainable Innovation, Taylor and Francis (CRC Press), 2026. Xception CNN, 15 skin conditions, validation accuracy 56% to 90%." />
   </picture></a>
+</p>
+
+<!-- TODO: placeholder URL until model.keras is pushed to Hugging Face; update it and drop "(coming soon)" -->
+<p align="center">
+  <sub><a href="https://doi.org/10.1201/9781003731689-111">Paper (DOI)</a> · <a href="https://huggingface.co/jiten0709/xception-skin-conditions">Model on Hugging Face</a> (coming soon)</sub>
 </p>
 
 <h3 align="center"><picture>
